@@ -44,7 +44,7 @@ Official documentation: [Creating a GitHub Pages site](https://docs.github.com/e
 - `index.html`: page structure and research copy.
 - `styles.css`: colors, typography, spacing, and responsive layouts.
 - `app.js`: animation, motion preference handling, menu, search, and filters.
-- Add a CV under `assets/cv.pdf` and set `cv` to `./assets/cv.pdf` in `profile.js` to display its link.
+- Replace `assets/cv.pdf` to update the embedded CV and download. Regenerate the page previews in `assets/cv-page-*.webp` and their screen-reader text in `index.html` from the replacement PDF. Update the date, page count, and viewer description in the CV section of `index.html`. The navigation and About link both lead to the on-page viewer; open-in-new-tab and download links are always available.
 
 Google Fonts supplies DM Sans and Manrope, with system sans-serif fallbacks. There is no analytics or contact-form backend; the email link opens the visitor's email application.
 

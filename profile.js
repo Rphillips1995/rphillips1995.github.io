@@ -8,7 +8,7 @@ window.researchProfile = {
   "github": "https://github.com/Rphillips1995",
   "bluesky": "https://bsky.app/profile/rphillips3.bsky.social",
   "orcid": "https://orcid.org/0000-0003-3560-4747",
-  "cv": "",
+  "cv": "./assets/cv.pdf",
   "publications": [
     {
       "authors": "KE Savell, JJ Tuscher, ME Zipperly, CG Duke, RA Phillips III, AJ Bauman, ...",

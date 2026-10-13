@@ -33,3 +33,21 @@
 .contact-arrow{color:var(--accent)}
 .contact-section .text-link{color:var(--green)}
 .contact-section .text-link:hover{color:var(--text)}
+
+/* CV reader and persistent download controls. */
+.cv-section{border-top:1px solid var(--line)}
+.cv-header{display:flex;justify-content:space-between;align-items:center;gap:32px;margin-bottom:28px}
+.cv-description{font-size:15px;margin:22px 0 0}
+.cv-description span{font-size:12px}
+.cv-actions{display:flex;flex-direction:column;align-items:flex-start;gap:17px;flex-shrink:0}
+.cv-viewer-help{font-size:12px;margin-bottom:14px}
+.cv-viewer{display:block;width:100%;height:780px;height:clamp(480px,78vh,960px);border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+@media(max-width:900px){.cv-header{flex-direction:column;align-items:flex-start;gap:23px}.cv-actions{flex-direction:row;align-items:center;flex-wrap:wrap;gap:18px}.cv-viewer{height:70vh;min-height:420px}}
+
+.cv-viewer{overflow:auto;overscroll-behavior-y:contain;scrollbar-color:var(--muted) var(--surface);padding:20px;background:#172636}
+.cv-viewer:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.cv-page{max-width:900px;margin:0 auto 24px}
+.cv-page:last-child{margin-bottom:0}
+.cv-page figcaption{font-size:11px;color:var(--muted);margin:0 0 10px}
+.cv-page img{display:block;width:100%;height:auto;background:#fff;box-shadow:0 3px 15px #0003}
+@media(max-width:600px){.cv-viewer{padding:10px}.cv-page{margin-bottom:18px}}

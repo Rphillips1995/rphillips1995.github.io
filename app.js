@@ -27,7 +27,7 @@
   $('#profile-links').replaceChildren();
   for (const [key, label] of [['scholar','Google Scholar'],['github','GitHub'],['bluesky','Bluesky'],['orcid','ORCID'],['cv','Curriculum vitae']]) {
     const url = safeURL(profile[key], key === 'cv');
-    if (url) $('#profile-links').append(link(`${label} ↗`, url));
+    if (url) $('#profile-links').append(link(key === 'cv' ? `${label} ↓` : `${label} ↗`, key === 'cv' ? '#cv' : url));
   }
   const scholarURL = safeURL(profile.scholar);
   if (scholarURL) $('#scholar-link').append(link('All publications on Google Scholar ↗', scholarURL, 'text-link'));

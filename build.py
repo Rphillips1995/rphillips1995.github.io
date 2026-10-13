@@ -24,7 +24,10 @@ page = re.sub(r'<div id="publication-list">.*?(?=<button id="more-publications")
 links = []
 for key, label in (("scholar", "Google Scholar"), ("github", "GitHub"), ("bluesky", "Bluesky"), ("orcid", "ORCID"), ("cv", "Curriculum vitae")):
     if profile.get(key):
-        links.append('<a href="' + escape(profile[key]) + '" target="_blank" rel="noopener noreferrer">' + label + ' ↗</a>')
+        if key == "cv":
+            links.append('<a href="#cv">Curriculum vitae ↓</a>')
+        else:
+            links.append('<a href="' + escape(profile[key]) + '" target="_blank" rel="noopener noreferrer">' + label + ' ↗</a>')
 page = page.replace('<div id="profile-links" class="profile-links"></div>', '<div id="profile-links" class="profile-links">' + ''.join(links) + '</div>')
 page = page.replace('The research content is available without JavaScript. Enable JavaScript for the interactive illustration and profile links.', 'All research and publications are available here. Enable JavaScript for the interactive illustration and publication search.')
 (OUT / "index.html").write_text(page)
