@@ -1,5 +1,6 @@
 """Build the static GitHub Pages site using only Python's standard library."""
 import html
+import hashlib
 import json
 import re
 import shutil
@@ -10,6 +11,8 @@ OUT = ROOT / "dist"
 OUT.mkdir(exist_ok=True)
 profile = json.loads((ROOT / "profile.js").read_text().split("window.researchProfile =", 1)[1].strip().removesuffix(";"))
 page = (ROOT / "index.html").read_text()
+style_version = hashlib.sha256((ROOT / "styles.css").read_bytes()).hexdigest()[:12]
+page = page.replace('href="./styles.css"', 'href="./styles.css?v=' + style_version + '"')
 escape = lambda value: html.escape(str(value), quote=True)
 
 for key in ("name", "bio"):
