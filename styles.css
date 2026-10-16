@@ -46,7 +46,9 @@
 
 .cv-viewer{overflow:auto;overscroll-behavior-y:contain;scrollbar-color:var(--muted) var(--surface);padding:20px;background:#172636}
 .cv-viewer:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.cv-page{max-width:900px;margin:0 auto 24px}
+/* Contain the accessible transcript so it cannot extend the page past the footer. */
+.cv-page{position:relative;max-width:900px;margin:0 auto 24px}
+.cv-page .sr-only{top:0;left:0}
 .cv-page:last-child{margin-bottom:0}
 .cv-page figcaption{font-size:11px;color:var(--muted);margin:0 0 10px}
 .cv-page img{display:block;width:100%;height:auto;background:#fff;box-shadow:0 3px 15px #0003}
